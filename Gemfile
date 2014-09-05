@@ -87,6 +87,7 @@ group :test do
   gem 'faker'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
 end
 
 group :production do

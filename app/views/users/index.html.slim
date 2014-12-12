@@ -1,23 +1,13 @@
-h1 Listing users
+- provide(:title, 'All users')
+h1
+  | All users
 
-table
-  thead
-    tr
-      th Name
-      th Email
-      th
-      th
-      th
+= will_paginate
 
-  tbody
-    - @users.each do |user|
-      tr
-        td = user.name
-        td = user.email
-        td = link_to 'Show', user
-        td = link_to 'Edit', edit_user_path(user)
-        td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+ul.users
+  - @users.each do |user|
+    li
+      = gravatar_for user
+      = link_to user.name, user
 
-br
-
-= link_to 'New User', new_user_path
+= will_paginate
